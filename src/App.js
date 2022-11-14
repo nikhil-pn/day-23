@@ -1,23 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState, useEffect } from 'react';
+import Lists from './lists';
+import MouseCursor from './useEffects';
+import Product from './product';
+
 
 function App() {
+  //useState hook its a function
+  const [count, setCount] = useState(0)
+  const handleChange = ()=>{
+    setCount(count +1)
+    //updateter function
+    setCount((prevCount)=>(prevCount +1))
+    setCount((prevCount)=>(prevCount +1))
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <h1>{count}</h1>
+      <button onClick={handleChange} >Click</button> */}
+      {/* <Lists></Lists> */}
+      {/* <MouseCursor></MouseCursor> */}
+      <Product/>
     </div>
   );
 }
